@@ -23,11 +23,20 @@ const HomeMovies = () => {
     return (
         <div className='container py-3'>
             <h3>Movie Section</h3>
-            {movie.map((item) => (
-                <div>
-                    <h3>{item.original_title}</h3>
-                </div>
-            ))}
+            <div className='row'>
+                {movie.map((item) => (
+                    <div key={item.id} className='col-6 col-md-4 col-lg-3'>
+                        <div className='card m-2 p'>
+                            <img
+                                className='img-fluid'
+                                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                                alt=''
+                            />
+                            <h6>{item.title}</h6>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
