@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import MovieDetails from "../view/MovieDetails";
 // Home Page
 import HomePage from "../App";
-
+import MovieDetails from "../view/MovieDetails";
+//Auth Pages
 import LoginPage from "../view/LoginPage";
 
 const router = createBrowserRouter([
