@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const MovieDetails = () => {
     const { movieId } = useParams();
+    const navigate = useNavigate();
     const [movieDetails, setMovieDetails] = useState(null);
 
     const fetchMovieDetails = async (id) => {
@@ -25,6 +26,17 @@ const MovieDetails = () => {
         <div>
             {movieDetails ? (
                 <div className='container pt-3'>
+                    <div className='row'>
+                        <div className='col-12'>
+                            <div className='float-end'>
+                                <button
+                                    onClick={() => navigate(-1)}
+                                    className='btn btn-secondary btn-sm'>
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <div className='row'>
                         <div className='col-12 col-md-4'>
                             <img
