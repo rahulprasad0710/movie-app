@@ -1,13 +1,52 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+/* movie details */
+
+.movie-details-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.movie-backdrop-img {
+    position: absolute;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1;
+    background-color: linear-gradient(
+        to right,
+        rgba(31.5, 31.5, 73.5, 1) calc((50vw - 170px) - 340px),
+        rgba(31.5, 31.5, 73.5, 0.84) 50%,
+        rgba(31.5, 31.5, 73.5, 0.84) 100%
+    );
+}
+
+.movie-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    z-index: 5;
+}
+
+.movie-poster-img {
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
